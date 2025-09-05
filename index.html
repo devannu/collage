@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CollegeDunia Clone - First Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slide { display: none; }
+    .active-slide { display: block; }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none;
+     scrollbar-width: none; }
+
+      /* Hide scrollbar but keep scrolling */
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <header class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-3">
+      <!-- Left: Logo + Dropdown -->
+      <div class="flex items-center gap-4">
+        <img src="https://dummyimage.com/120x40/ff6600/fff&text=LOGO" alt="Logo" class="h-8">
+        <div class="text-sm">
+          <span class="text-orange-400 font-semibold">Select Goal & City</span>  
+          <select class="bg-gray-800 text-sm px-2 py-1 rounded ml-2">
+            <option>Select Goal</option>
+            <option>Engineering</option>
+            <option>Management</option>
+            <option>Commerce</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Middle: Search Bar -->
+      <div class="flex-1 mx-6 hidden md:block">
+        <input type="text" placeholder="Search for Colleges, Exams, Courses and More.."
+          class="w-full px-4 py-2 rounded-lg text-black focus:ring-2 focus:ring-orange-400">
+      </div>
+
+      <!-- Right: Actions -->
+      <div class="flex items-center gap-4 text-sm">
+        <a href="#" class="hover:text-orange-400">Write a Review</a>
+        <a href="#" class="hover:text-orange-400">Explore</a>
+        <button class="bg-orange-500 px-3 py-1 rounded-lg hover:bg-orange-600">Login</button>
+      </div>
+    </div>
+
+    <!-- Sub Navigation -->
+    <div class="bg-gray-800 text-gray-200 text-sm">
+      <div class="max-w-7xl mx-auto flex gap-6 px-4 py-2 overflow-x-auto">
+        <a href="#" class="hover:text-orange-400">All Courses</a>
+        <a href="#" class="hover:text-orange-400">B.Tech</a>
+        <a href="#" class="hover:text-orange-400">MBA</a>
+        <a href="#" class="hover:text-orange-400">M.Tech</a>
+        <a href="#" class="hover:text-orange-400">MBBS</a>
+        <a href="#" class="hover:text-orange-400">B.Com</a>
+        <a href="#" class="hover:text-orange-400">B.Sc</a>
+        <a href="#" class="hover:text-orange-400">B.Sc (Nursing)</a>
+        <a href="#" class="hover:text-orange-400">BA</a>
+        <a href="#" class="hover:text-orange-400">BBA</a>
+        <a href="#" class="hover:text-orange-400">BCA</a>
+      </div>
+    </div>
+  </header>
+
+   <!-- Hero Section with Slider -->
+  <section class="relative h-[400px] overflow-hidden">
+    <!-- Slides -->
+    <div class="absolute inset-0">
+      <img src="https://picsum.photos/id/1011/1600/400" class="slide active-slide w-full h-full object-cover" />
+      <img src="https://picsum.photos/id/1015/1600/400" class="slide w-full h-full object-cover" />
+      <img src="https://picsum.photos/id/1025/1600/400" class="slide w-full h-full object-cover" />
+      <img src="https://picsum.photos/id/1035/1600/400" class="slide w-full h-full object-cover" />
+      <img src="https://picsum.photos/id/1045/1600/400" class="slide w-full h-full object-cover" />
+      <img src="https://picsum.photos/id/1055/1600/400" class="slide w-full h-full object-cover" />
+    </div>
+
+    <!-- Overlay Content -->
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white px-4">
+      <h1 class="text-2xl md:text-4xl font-bold">Find Over 4 Lakh Review in India</h1>
+
+      <!-- Search box -->
+      <div class="mt-6 flex w-full max-w-2xl">
+        <input type="text" placeholder="Search for colleges, exams, courses and more.."
+          class="flex-1 px-4 py-3 rounded-l-lg text-black focus:ring-2 focus:ring-orange-400">
+        <button class="bg-orange-500 px-6 rounded-r-lg hover:bg-orange-600">Search</button>
+      </div>
+
+      <!-- Extra buttons -->
+      <div class="mt-4 flex gap-4">
+        <button class="bg-white text-gray-900 px-4 py-2 rounded-lg text-sm">CBSE CLASS XII</button>
+        <button class="bg-white text-gray-900 px-4 py-2 rounded-lg text-sm">Bihar Board</button>
+        <button class="bg-orange-500 px-4 py-2 rounded-lg text-sm hover:bg-orange-600">Need Counselling</button>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Study Goal Section -->
+<section class="py-10 container mx-auto px-6">
+  <h2 class="text-3xl font-bold mb-6 text-gray-800">Select Your Study Goal</h2>
+
+  <div class="relative">
+    <!-- Left Button -->
+    <button onclick="scrollLeft()" 
+      class="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-lg p-3 rounded-full z-10 hover:bg-orange-500 hover:text-white">
+      &#8592;
+    </button>
+
+    <!-- Cards Wrapper -->
+    <div id="goalSlider" class="flex space-x-6 overflow-x-auto scrollbar-hide scroll-smooth">
+
+      <!-- 1 Engineering -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Engineering</h3>
+        <p class="mb-2 text-sm text-gray-500">6344 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">BE/B.Tech</li>
+          <li class="py-1 border-t">Diploma</li>
+          <li class="py-1 border-t">ME/M.Tech</li>
+        </ul>
+      </div>
+
+      <!-- 2 Management -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Management</h3>
+        <p class="mb-2 text-sm text-gray-500">7953 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">MBA/PGDM</li>
+          <li class="py-1 border-t">BBA/BMS</li>
+          <li class="py-1 border-t">Executive MBA</li>
+        </ul>
+      </div>
+
+      <!-- 3 Commerce -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Commerce</h3>
+        <p class="mb-2 text-sm text-gray-500">5049 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">B.Com</li>
+          <li class="py-1 border-t">M.Com</li>
+        </ul>
+      </div>
+
+      <!-- 4 Arts -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Arts</h3>
+        <p class="mb-2 text-sm text-gray-500">5704 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">BA</li>
+          <li class="py-1 border-t">MA</li>
+          <li class="py-1 border-t">BFA</li>
+          <li class="py-1 border-t">BSW</li>
+        </ul>
+      </div>
+
+      <!-- 5 Science -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Science</h3>
+        <p class="mb-2 text-sm text-gray-500">6210 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">B.Sc</li>
+          <li class="py-1 border-t">M.Sc</li>
+          <li class="py-1 border-t">PhD</li>
+        </ul>
+      </div>
+
+      <!-- 6 Law -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Law</h3>
+        <p class="mb-2 text-sm text-gray-500">1800 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">LLB</li>
+          <li class="py-1 border-t">LLM</li>
+          <li class="py-1 border-t">Integrated Law</li>
+        </ul>
+      </div>
+
+      <!-- 7 Medical -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Medical</h3>
+        <p class="mb-2 text-sm text-gray-500">2100 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">MBBS</li>
+          <li class="py-1 border-t">MD</li>
+          <li class="py-1 border-t">BDS</li>
+        </ul>
+      </div>
+
+      <!-- 8 Pharmacy -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Pharmacy</h3>
+        <p class="mb-2 text-sm text-gray-500">1200 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">B.Pharm</li>
+          <li class="py-1 border-t">M.Pharm</li>
+          <li class="py-1 border-t">D.Pharm</li>
+        </ul>
+      </div>
+
+      <!-- 9 Computer Applications -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Computer Applications</h3>
+        <p class="mb-2 text-sm text-gray-500">3400 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">BCA</li>
+          <li class="py-1 border-t">MCA</li>
+        </ul>
+      </div>
+
+      <!-- 10 Media & Journalism -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Media & Journalism</h3>
+        <p class="mb-2 text-sm text-gray-500">950 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">BJMC</li>
+          <li class="py-1 border-t">MJMC</li>
+          <li class="py-1 border-t">Mass Comm.</li>
+        </ul>
+      </div>
+
+      <!-- 11 Hotel Management -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Hotel Management</h3>
+        <p class="mb-2 text-sm text-gray-500">700 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">BHM</li>
+          <li class="py-1 border-t">MHM</li>
+        </ul>
+      </div>
+
+      <!-- 12 Architecture -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Architecture</h3>
+        <p class="mb-2 text-sm text-gray-500">500 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">B.Arch</li>
+          <li class="py-1 border-t">M.Arch</li>
+        </ul>
+      </div>
+
+      <!-- 13 Education -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Education</h3>
+        <p class="mb-2 text-sm text-gray-500">4200 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">B.Ed</li>
+          <li class="py-1 border-t">M.Ed</li>
+          <li class="py-1 border-t">Diploma</li>
+        </ul>
+      </div>
+
+      <!-- 14 Performing Arts -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Performing Arts</h3>
+        <p class="mb-2 text-sm text-gray-500">600 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">Dance</li>
+          <li class="py-1 border-t">Drama</li>
+          <li class="py-1 border-t">Music</li>
+        </ul>
+      </div>
+
+      <!-- 15 Agriculture -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Agriculture</h3>
+        <p class="mb-2 text-sm text-gray-500">800 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">B.Sc Agri</li>
+          <li class="py-1 border-t">M.Sc Agri</li>
+          <li class="py-1 border-t">Diploma</li>
+        </ul>
+      </div>
+
+      <!-- 16 Aviation -->
+      <div class="min-w-[220px] bg-white border rounded-xl shadow p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-bold text-gray-800">Aviation</h3>
+        <p class="mb-2 text-sm text-gray-500">400 Colleges</p>
+        <ul class="text-sm text-gray-700">
+          <li class="py-1 border-t">Pilot Training</li>
+          <li class="py-1 border-t">AME</li>
+          <li class="py-1 border-t">Aerospace</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Right Button -->
+    <button onclick="scrollRight()" 
+      class="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-lg p-3 rounded-full z-10 hover:bg-orange-500 hover:text-white">
+      &#8594;
+    </button>
+  </div>
+</section>
+
+
+
+  <main class="max-w-6xl mx-auto px-4 py-6">
+    <!-- Section Title -->
+    <h2 class="text-2xl font-bold mb-4 text-center">Explore Programs</h2>
+
+    <!-- Scrollable Pills (centered, hidden scrollbar) -->
+    <div class="relative flex items-center mb-6">
+      <!-- Left Arrow -->
+      <button onclick="slideLeft()" id="btnLeft"
+        class="hidden md:flex absolute left-0 z-20 w-10 h-10 rounded-full bg-white shadow-md items-center justify-center hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed">
+        ←
+      </button>
+
+      <!-- Pills container -->
+      <div id="scroll-container"
+        class="flex overflow-x-auto scrollbar-hide scroll-smooth gap-3 px-12 w-full">
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">All</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">BE/B.Tech</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">MBA/PGDM</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">MBBS</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">ME/M.Tech</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">B.Sc</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">BA</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">B.Com</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">BCA</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">BBA/BMS</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">B.Sc (Nursing)</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">M.Sc</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">LLB</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">LLM</button>
+        <button class="px-5 py-2 rounded-full border border-gray-300 bg-white text-sm font-medium whitespace-nowrap">PhD</button>
+      </div>
+
+      <!-- Right Arrow -->
+      <button onclick="slideRight()" id="btnRight"
+        class="hidden md:flex absolute right-0 z-20 w-10 h-10 rounded-full bg-white shadow-md items-center justify-center hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed">
+        →
+      </button>
+    </div>
+
+    <!-- Cards Grid (centered) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-lg shadow p-5 flex justify-between items-start">
+        <div>
+          <h3 class="text-lg font-semibold">Ranking</h3>
+          <p class="text-sm text-gray-600 mt-1">College ranked based on real data</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">Collegedunia - 2592</span>
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">Indiatoday - 1802</span>
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">NIRF - 1302</span>
+          </div>
+          <p class="text-sm font-medium text-blue-600 mt-4 cursor-pointer">Top Ranked Colleges in India ›</p>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-14 h-14" alt="icon">
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-lg shadow p-5 flex justify-between items-start">
+        <div>
+          <h3 class="text-lg font-semibold">Find Colleges</h3>
+          <p class="text-sm text-gray-600 mt-1">Discover 19000+ colleges via preferences</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">Best MBA colleges</span>
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">Best BTech colleges</span>
+          </div>
+          <p class="text-sm font-medium text-blue-600 mt-4 cursor-pointer">Discover Top Colleges ›</p>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/3022/3022092.png" class="w-14 h-14" alt="icon">
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-lg shadow p-5 flex justify-between items-start">
+        <div>
+          <h3 class="text-lg font-semibold">Compare Colleges</h3>
+          <p class="text-sm text-gray-600 mt-1">Compare on the basis of rank, fees, etc.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">IIT Madras vs IIT Delhi</span>
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">IIT Bombay vs IIT Kanpur</span>
+          </div>
+          <p class="text-sm font-medium text-blue-600 mt-4 cursor-pointer">Compare Colleges ›</p>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/201/201623.png" class="w-14 h-14" alt="icon">
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-lg shadow p-5 flex justify-between items-start">
+        <div>
+          <h3 class="text-lg font-semibold">Exams</h3>
+          <p class="text-sm text-gray-600 mt-1">Know more about your exams</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">B.Com</span>
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">B.Sc</span>
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">BA</span>
+          </div>
+          <p class="text-sm font-medium text-blue-600 mt-4 cursor-pointer">Check Entrance Exams ›</p>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135823.png" class="w-14 h-14" alt="icon">
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white rounded-lg shadow p-5 flex justify-between items-start">
+        <div>
+          <h3 class="text-lg font-semibold">College Predictor</h3>
+          <p class="text-sm text-gray-600 mt-1">Know your college admission chances</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">NEET</span>
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">CUET</span>
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">JEE Main</span>
+          </div>
+          <p class="text-sm font-medium text-blue-600 mt-4 cursor-pointer">Find Admission Chances ›</p>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" class="w-14 h-14" alt="icon">
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-white rounded-lg shadow p-5 flex justify-between items-start">
+        <div>
+          <h3 class="text-lg font-semibold">Course Finder</h3>
+          <p class="text-sm text-gray-600 mt-1">Discover top courses in Indian Colleges</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">BE/B.Tech - 951</span>
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">MBA - 1140</span>
+            <span class="px-3 py-1 text-sm bg-gray-100 rounded-full">M.Sc - 1050</span>
+          </div>
+          <p class="text-sm font-medium text-blue-600 mt-4 cursor-pointer">Get Top Courses ›</p>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" class="w-14 h-14" alt="icon">
+      </div>
+    </div>
+  </main>
+
+
+
+  <div class="bg-gray-50 p-4 flex justify-center">
+    <div class="max-w-7xl w-full ">
+
+    <!-- Title -->
+    <h1 class="text-xl md:text-2xl font-semibold mb-4 text-gray-800 text-center">
+      Top 10 Colleges
+    </h1>
+
+    <!-- Header with Scrollable Pills -->
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <!-- Left Button -->
+      <button id="scrollLeft" class="p-2 bg-white rounded-full shadow hover:bg-gray-100">
+        ←
+      </button>
+
+      <!-- Scrollable Pills -->
+      <div id="pillsContainer" class="flex gap-2 overflow-x-auto scrollbar-hide scroll-smooth w-full max-w-3xl">
+        <button class="px-4 py-2 bg-gray-200 rounded-full whitespace-nowrap">Applications</button>
+        <button class="px-4 py-2 bg-gray-200 rounded-full whitespace-nowrap">B.Des</button>
+        <button class="px-4 py-2 bg-gray-200 rounded-full whitespace-nowrap">M.Ed</button>
+        <button class="px-4 py-2 bg-gray-200 rounded-full whitespace-nowrap">LLM</button>
+        <button class="px-4 py-2 bg-gray-200 rounded-full whitespace-nowrap">M.Phil/Ph.D in Pharmacy</button>
+        <button class="px-4 py-2 bg-gray-200 rounded-full whitespace-nowrap">BHM</button>
+        <button class="px-4 py-2 bg-gray-200 rounded-full whitespace-nowrap">BMM</button>
+        <button class="px-4 py-2 bg-gray-200 rounded-full whitespace-nowrap">B.Pharma (Lateral)</button>
+        <button class="px-4 py-2 bg-gray-200 rounded-full whitespace-nowrap">MD</button>
+        <button class="px-4 py-2 bg-gray-200 rounded-full whitespace-nowrap">M.Sc</button>
+      </div>
+
+      <!-- Right Button -->
+      <button id="scrollRight" class="p-2 bg-white rounded-full shadow hover:bg-gray-100">
+        →
+      </button>
+    </div>
+
+    <!-- Table Section -->
+    <div class="overflow-x-auto bg-white shadow rounded-lg">
+      <table class="min-w-full border-collapse text-center">
+        <thead class="bg-gray-100 text-gray-700 text-sm">
+          <tr>
+            <th class="p-3">Rank</th>
+            <th class="p-3">College</th>
+            <th class="p-3">Ranking</th>
+            <th class="p-3">Cutoff</th>
+            <th class="p-3">Application Deadline</th>
+            <th class="p-3">Fees</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm divide-y">
+          <tr>
+            <td class="p-3 font-medium">#1</td>
+            <td class="p-3">
+              <div class="font-semibold">IIMA - Indian Institute of Management</div>
+              <div class="text-gray-500 text-xs">Ahmedabad, Gujarat | ⭐ 5/5</div>
+            </td>
+            <td class="p-3">#2 out of 50 in India 2019</td>
+            <td class="p-3">CAT 2024 Cut off 99</td>
+            <td class="p-3">7 July - 08 Sept 2025</td>
+            <td class="p-3 font-semibold">₹1,38,060 <br><span class="text-xs text-gray-500">Total Fees</span></td>
+          </tr>
+          <tr>
+            <td class="p-3 font-medium">#2</td>
+            <td class="p-3">
+              <div class="font-semibold">IIT Bombay - Indian Institute of Technology [IITB]</div>
+              <div class="text-gray-500 text-xs">Mumbai, Maharashtra | ⭐ 5/5</div>
+            </td>
+            <td class="p-3">#1 out of 50 in India 2024</td>
+            <td class="p-3">JEE-Advanced 2025 Cut off 66</td>
+            <td class="p-3">14 Mar - 03 Apr 2025</td>
+            <td class="p-3 font-semibold">₹72,000 <br><span class="text-xs text-gray-500">1st Year Fees</span></td>
+          </tr>
+          <tr>
+            <td class="p-3 font-medium">#3</td>
+            <td class="p-3">
+              <div class="font-semibold">All India Institute of Medical Sciences - [AIIMS]</div>
+              <div class="text-gray-500 text-xs">New Delhi, Delhi NCR | ⭐ 4.9/5</div>
+            </td>
+            <td class="p-3">#1 out of 16 in India 2024</td>
+            <td class="p-3">NEET 2025 Cut off 48</td>
+            <td class="p-3">8 Apr - 07 May 2025</td>
+            <td class="p-3 font-semibold">₹1,787 <br><span class="text-xs text-gray-500">1st Year Fees</span></td>
+          </tr>
+          <tr>
+            <td class="p-3 font-medium">#4</td>
+            <td class="p-3">
+              <div class="font-semibold">National Law School of India University - [NLSIU]</div>
+              <div class="text-gray-500 text-xs">Bangalore, Karnataka | ⭐ 4.8/5</div>
+            </td>
+            <td class="p-3">-</td>
+            <td class="p-3">CLAT 2025 Cut off 112</td>
+            <td class="p-3">2 Jan - 23 Mar 2025</td>
+            <td class="p-3 font-semibold">₹4,54,500 <br><span class="text-xs text-gray-500">Total Fees</span></td>
+          </tr>
+          <tr>
+            <td class="p-3 font-medium">#5</td>
+            <td class="p-3">
+              <div class="font-semibold">Vardhman Mahavir Medical College - [VMMC]</div>
+              <div class="text-gray-500 text-xs">New Delhi, Delhi NCR | ⭐ 4.9/5</div>
+            </td>
+            <td class="p-3">-</td>
+            <td class="p-3">NEET 2025 Cut off 132</td>
+            <td class="p-3">1 Feb - 15 May 2024</td>
+            <td class="p-3 font-semibold">₹57,000 <br><span class="text-xs text-gray-500">1st Year Fees</span></td>
+          </tr>
+          <tr>
+            <td class="p-3 font-medium">#6</td>
+            <td class="p-3">
+              <div class="font-semibold">IIT Delhi - Indian Institute of Technology [IITD]</div>
+              <div class="text-gray-500 text-xs">New Delhi, Delhi NCR | ⭐ 4.9/5</div>
+            </td>
+            <td class="p-3">#1 out of 27 in India 2024</td>
+            <td class="p-3">JEE-Advanced 2025 Cut off 355</td>
+            <td class="p-3">14 Mar - 03 Apr 2025</td>
+            <td class="p-3 font-semibold">₹2,27,750 <br><span class="text-xs text-gray-500">1st Year Fees</span></td>
+          </tr>
+          <tr>
+            <td class="p-3 font-medium">#7</td>
+            <td class="p-3">
+              <div class="font-semibold">IIMC - Indian Institute of Management</div>
+              <div class="text-gray-500 text-xs">Kolkata, West Bengal | ⭐ 4.9/5</div>
+            </td>
+            <td class="p-3">#99 out of 200 in India 2023</td>
+            <td class="p-3">CAT 2024 Cut off 99</td>
+            <td class="p-3">16 Oct - 26 Nov 2025</td>
+            <td class="p-3 font-semibold">₹13,50,000 <br><span class="text-xs text-gray-500">Total Fees</span></td>
+          </tr>
+          <tr>
+            <td class="p-3 font-medium">#8</td>
+            <td class="p-3">
+              <div class="font-semibold">Shri Ram College of Commerce - [SRCC]</div>
+              <div class="text-gray-500 text-xs">New Delhi, Delhi NCR | ⭐ 4.9/5</div>
+            </td>
+            <td class="p-3">#19 out of 300 in India 2024</td>
+            <td class="p-3">CUET 2025 Cut off 910</td>
+            <td class="p-3">17 June - 10 Aug 2025</td>
+            <td class="p-3 font-semibold">₹32,420 <br><span class="text-xs text-gray-500">1st Year Fees</span></td>
+          </tr>
+          <tr>
+            <td class="p-3 font-medium">#9</td>
+            <td class="p-3">
+              <div class="font-semibold">School of Planning and Architecture - [SPA]</div>
+              <div class="text-gray-500 text-xs">New Delhi, Delhi NCR | ⭐ 4.7/5</div>
+            </td>
+            <td class="p-3">#101 out of 200 in India 2019</td>
+            <td class="p-3">JEE-Main 2025 Cut off 207</td>
+            <td class="p-3">19 June - 28 Jun 2024</td>
+            <td class="p-3 font-semibold">₹1,22,000 <br><span class="text-xs text-gray-500">1st Year Fees</span></td>
+          </tr>
+          <tr>
+            <td class="p-3 font-medium">#10</td>
+            <td class="p-3">
+              <div class="font-semibold">Institute of Hotel Management, Catering and Nutrition - [IHM], Pusa</div>
+              <div class="text-gray-500 text-xs">New Delhi, Delhi NCR | ⭐ 4.6/5</div>
+            </td>
+            <td class="p-3">-</td>
+            <td class="p-3">NCHMCT-JEE 2025 Cut off 180</td>
+            <td class="p-3">16 July - 18 Jul 2024</td>
+            <td class="p-3 font-semibold">₹1,76,515 <br><span class="text-xs text-gray-500">1st Year Fees</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+
+
+
+
+<script>
+  function scrollLeft() {
+    document.getElementById('goalSlider').scrollBy({ left: -250, behavior: 'smooth' });
+  }
+  function scrollRight() {
+    document.getElementById('goalSlider').scrollBy({ left: 250, behavior: 'smooth' });
+  }
+</script>
+
+  <!-- Slider Script -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlides() {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active-slide");
+        if (i === slideIndex) slide.classList.add("active-slide");
+      });
+      slideIndex = (slideIndex + 1) % slides.length;
+    }
+
+    setInterval(showSlides, 2000); // Change image every 2 sec
+
+
+    // <!-- Scroll Buttons Script -->
+ 
+    const slider = document.getElementById("goalSlider");
+
+    function scrollLeft() {
+ slider.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+
+    function scrollRight() {
+      slider.scrollBy({ left: 300, behavior: 'smooth' });
+
+
+    }
+
+
+
+      const scroller = document.getElementById('scroll-container');
+    const btnLeft = document.getElementById('btnLeft');
+    const btnRight = document.getElementById('btnRight');
+
+    function slideBy(px) {
+      scroller.scrollBy({ left: px, behavior: 'smooth' });
+    }
+    function slideLeft()  { slideBy(-Math.max(200, scroller.clientWidth * 0.6)); }
+    function slideRight() { slideBy( Math.max(200, scroller.clientWidth * 0.6)); }
+
+    // Optional: disable arrows at edges for better UX
+    function updateArrows() {
+      const max = scroller.scrollWidth - scroller.clientWidth - 1;
+      btnLeft && (btnLeft.disabled = scroller.scrollLeft <= 0);
+      btnRight && (btnRight.disabled = scroller.scrollLeft >= max);
+    }
+    scroller.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    document.addEventListener('DOMContentLoaded', updateArrows);
+
+
+
+
+// <!-- JS for Scroll Buttons -->
+    const pillsContainer = document.getElementById("pillsContainer");
+    const scrollLeftBtn = document.getElementById("scrollLeft");
+    const scrollRightBtn = document.getElementById("scrollRight");
+
+    scrollLeftBtn.addEventListener("click", () => {
+      pillsContainer.scrollBy({ left: -200, behavior: "smooth" });
+    });
+
+    scrollRightBtn.addEventListener("click", () => {
+      pillsContainer.scrollBy({ left: 200, behavior: "smooth" });
+    });
+  </script>
+
+  <!-- Hide Scrollbar CSS -->
+   <style>
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+  
+  </script>
+
+</body>
+</html>
